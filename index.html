@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Thrones Voice Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <h1>⚔️ Game of Thrones Voice Chatbot</h1>
+      <p>Choose your character and speak with them</p>
+    </header>
+
+    <!-- Character Selection -->
+    <div class="character-selection">
+      <h2>Select a Character</h2>
+      <div class="character-buttons">
+        <button class="character-btn" data-character="jon-snow">
+          <span class="character-emoji">🐺</span>
+          <span class="character-name">Jon Snow</span>
+          <span class="character-title">King in the North</span>
+        </button>
+        <button class="character-btn" data-character="daenerys">
+          <span class="character-emoji">🐉</span>
+          <span class="character-name">Daenerys</span>
+          <span class="character-title">Mother of Dragons</span>
+        </button>
+        <button class="character-btn" data-character="sansa">
+          <span class="character-emoji">👑</span>
+          <span class="character-name">Sansa Stark</span>
+          <span class="character-title">Queen in the North</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Interface (Hidden initially) -->
+    <div class="chat-interface" style="display: none;">
+      
+      <!-- Current Character Display -->
+      <div class="current-character">
+        <h3>Speaking with: <span id="current-character-name"></span></h3>
+        <button class="change-character-btn" onclick="changeCharacter()">Change Character</button>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="chat-messages" id="chat-messages">
+        <div class="system-message">
+          Character ready. Click "Start Recording" to begin.
+        </div>
+      </div>
+
+      <!-- Status Display -->
+      <div class="status" id="status">
+        Ready to record
+      </div>
+
+      <!-- Recording Controls -->
+      <div class="controls">
+        <button class="record-btn" id="record-btn">
+          <span class="record-icon">🎤</span>
+          <span class="record-text">Start Recording</span>
+        </button>
+      </div>
+
+      <!-- Transcript Display -->
+      <div class="transcript" id="transcript" style="display: none;">
+        <strong>You said:</strong> <span id="transcript-text"></span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Powered by OpenAI Whisper, GPT-4o-mini, and TTS</p>
+    </footer>
+  </div>
+
+  <!-- Include JavaScript -->
+  <script src="client.js"></script>
+</body>
+</html>

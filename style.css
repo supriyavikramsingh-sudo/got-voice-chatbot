@@ -1,0 +1,317 @@
+/* ========================================
+   GAME OF THRONES VOICE CHATBOT - STYLES
+   ======================================== */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  font-size: 1.1em;
+  color: #b8b8b8;
+}
+
+/* Character Selection */
+.character-selection {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.character-selection h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ffd700;
+}
+
+.character-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.character-btn {
+  background: linear-gradient(135deg, #2d4059 0%, #1f3044 100%);
+  border: 2px solid #4a5568;
+  padding: 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.character-btn:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.character-btn.active {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, #3d5068 0%, #2f4054 100%);
+}
+
+.character-emoji {
+  font-size: 3em;
+}
+
+.character-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.character-title {
+  font-size: 0.9em;
+  color: #b8b8b8;
+}
+
+/* Chat Interface */
+.chat-interface {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.current-character {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.current-character h3 {
+  color: #ffd700;
+}
+
+.change-character-btn {
+  background: #4a5568;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.change-character-btn:hover {
+  background: #5a6578;
+}
+
+/* Chat Messages */
+.chat-messages {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+.user-message {
+  background: rgba(100, 150, 255, 0.2);
+  border-left: 3px solid #6496ff;
+}
+
+.character-message {
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 3px solid #ffd700;
+}
+
+.system-message {
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-style: italic;
+  color: #b8b8b8;
+}
+
+/* Status Display */
+.status {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.status.recording {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff4444;
+  animation: pulse 1.5s infinite;
+}
+
+.status.processing {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.status.speaking {
+  background: rgba(0, 255, 0, 0.2);
+  color: #44ff44;
+}
+
+/* Controls */
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.record-btn {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  border: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 1.2em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.record-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 68, 68, 0.6);
+}
+
+.record-btn:active {
+  transform: scale(0.98);
+}
+
+.record-btn.recording {
+  background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+  animation: pulse 1.5s infinite;
+}
+
+.record-btn:disabled {
+  background: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.record-icon {
+  font-size: 1.3em;
+}
+
+/* Transcript Display */
+.transcript {
+  background: rgba(100, 150, 255, 0.15);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #6496ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Scrollbar Styling */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+  
+  .character-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .current-character {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
